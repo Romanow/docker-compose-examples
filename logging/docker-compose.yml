@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  fluent-bit:
+    image: fluent/fluent-bit:3.1.7-debug
+    container_name: fluent-bit
+    ports:
+      - "5170:5170"
+    healthcheck:
+      test: [ "CMD-SHELL", "curl --silent --fail http://localhost:2020/api/v1/health" ]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+    volumes:
+      - ./fluent-bit/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
