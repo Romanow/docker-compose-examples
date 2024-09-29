@@ -43,7 +43,7 @@ jobs:
         timeout-minutes: 10
         working-directory: ${{ matrix.dir }}
         run: |
-          docker compose -f  up -d --wait
+          docker compose up -d --wait
 
       - name: Stop containers
         if: always()
