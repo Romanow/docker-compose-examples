@@ -50,5 +50,3 @@ jobs:
         working-directory: ${{ matrix.dir }}
         run: |
           docker compose down -v
-
-
