@@ -1,3 +1,3 @@
 # ElasticSearch
 
-* [Single Node](docker-compose.single-node.yml)
+* [Single Node](docker-compose.yml)

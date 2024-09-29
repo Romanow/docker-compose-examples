@@ -1,3 +1,3 @@
 # Jaeger Tracing
 
-* [All-In-One](docker-compose.all-in-one.yml)
+* [All-In-One](docker-compose.yml)

@@ -1,3 +1,3 @@
 # Kafka and Zookeeper
 
-* [Single Node](docker-compose.standalone.yml)
+* [Single Node](docker-compose.yml)
