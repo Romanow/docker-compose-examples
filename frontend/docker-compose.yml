@@ -2,6 +2,9 @@ services:
   simple-frontend:
     image: "romanowalex/simple-frontend:v2.0"
     container_name: simple-frontend
+    platform: linux/amd64
+    environment:
+      BACKEND_HOST: localhost
     ports:
       - "8080:80"
     healthcheck:
