@@ -1,7 +1,8 @@
 version: "3.9"
 services:
   postgres:
-    image: postgres:15
+    build: .
+    image: romanowalex/postgres:15-pg_profile
     container_name: postgres
     environment:
       POSTGRES_USER: postgres
