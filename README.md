@@ -9,5 +9,6 @@
 * [Logging](logging/README.md)
 * [Tracing](tracing/README.md)
 * [Elastic](elastic/README.md)
+* [Minio](minio/README.md)
 * [Frontend](frontend/README.md)
 * [Java](java/README.md)
