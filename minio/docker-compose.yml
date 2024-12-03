@@ -1,5 +1,3 @@
-version: "3.9"
-
 x-minio-common: &minio-common
   image:
     minio/minio:latest
