@@ -1,0 +1,19 @@
+services:
+  artemis:
+    image: "romanowalex/artemis:2.28.0"
+    container_name: artemis
+    environment:
+      ANONYMOUS_LOGIN: true
+    ports:
+      - "8161:8161"
+      - "61616:61616"
+    healthcheck:
+      test: [ "CMD-SHELL", "/var/lib/artemis-instance/bin/artemis check queue --name TEST --produce 10 --browse 10 --consume 10 --url tcp://localhost:61616" ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - artemis-data:/var/lib/artemis-instance
+
+volumes:
+  artemis-data:

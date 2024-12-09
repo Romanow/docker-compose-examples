@@ -4,6 +4,7 @@
 # Docker Compose examples
 
 * [Kafka](kafka/README.md)
+* [Artemis](artemis/README.md)
 * [Monitoring](monitoring/README.md)
 * [Postgres](postgres/README.md)
 * [Logging](logging/README.md)
