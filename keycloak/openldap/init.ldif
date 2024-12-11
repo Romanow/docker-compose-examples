@@ -1,0 +1,45 @@
+version: 1
+
+dn: dc=example,dc=org
+dc: example
+o: example
+objectClass: dcObject
+objectClass: organization
+
+dn: ou=users,dc=example,dc=org
+objectClass: organizationalUnit
+ou: users
+
+dn: cn=ronin,ou=users,dc=example,dc=org
+cn: ronin
+gidNumber: 1000
+homeDirectory: /home/ronin
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+sn: Romanov
+givenName: Alex
+mail: ronin@mail.ru
+uid: ronin
+uidNumber: 1000
+userpassword: test
+
+dn: cn=program,ou=users,dc=example,dc=org
+cn: program
+gidNumber: 1001
+homeDirectory: /home/program
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+sn: Romanov
+givenName: Alex
+mail: program@mail.ru
+uid: program
+uidNumber: 1001
+userpassword: test
+
+dn: cn=readers,ou=users,dc=example,dc=org
+cn: readers
+member: cn=ronin,ou=users,dc=example,dc=org
+member: cn=program,ou=users,dc=example,dc=org
+objectClass: groupOfNames
