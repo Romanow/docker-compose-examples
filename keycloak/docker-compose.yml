@@ -42,11 +42,6 @@ services:
     container_name: openldap-admin
     ports:
       - "8000:80"
-    healthcheck:
-      test: "curl --fail http://localhost || exit 1"
-      interval: 5s
-      timeout: 3s
-      retries: 5
     volumes:
       - ./openldap-admin/.env.yaml:/container/environment/01-custom/env.yaml
     depends_on:
