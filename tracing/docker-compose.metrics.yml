@@ -1,0 +1,38 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.52.0
+    container_name: prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus/data"
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:9090" ]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus:/prometheus
+
+  jaeger:
+    image: "jaegertracing/jaeger:2.2.0"
+    command: [ "--config", "/etc/jaeger/config.yml" ]
+    container_name: jaeger
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:16686" ]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "16686:16686"
+      - "4318:4318"
+    volumes:
+      - "./jaeger/metrics-config.yml:/etc/jaeger/config.yml"
+    depends_on:
+      prometheus:
+        condition: service_healthy
+
+volumes:
+  prometheus:

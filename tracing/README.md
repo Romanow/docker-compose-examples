@@ -1,3 +1,4 @@
 # Jaeger Tracing
 
-* [All-In-One](docker-compose.yml)
+* [Simple](docker-compose.yml)
+* [Metrics](docker-compose.metrics.yml)
