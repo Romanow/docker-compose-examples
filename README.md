@@ -13,6 +13,7 @@
 ## Storages
 
 * [Postgres](postgres/README.md)
+* [MySQL](mysql/README.md)
 * [Elastic](elastic/README.md)
 * [Minio](minio/README.md)
 
