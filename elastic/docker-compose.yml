@@ -1,16 +1,16 @@
 services:
   elastic:
-    image: elasticsearch:8.12.2
+    image: "bitnami/elasticsearch:8.17.1"
     container_name: elastic
     environment:
-      discovery.type: single-node
-      node.name: elastics
-      bootstrap.memory_lock: true
-      cluster.routing.allocation.disk.threshold_enabled: false
-      xpack.security.enabled: false
-      ES_JAVA_OPTS: "-Xms1024m -Xmx1024m"
+      ELASTICSEARCH_NODE_NAME: elastic
+      ELASTICSEARCH_CLUSTER_NAME: elastic
+      ELASTICSEARCH_ENABLE_SECURITY: false
+      ELASTICSEARCH_ENABLE_REST_TLS: false
+      ELASTICSEARCH_LOCK_ALL_MEMORY: true
+      ELASTICSEARCH_HEAP_SIZE: 1g
     healthcheck:
-      test: [ "CMD-SHELL", "curl -f http://localhost:9200/_cat/health | grep -q green" ]
+      test: [ "CMD-SHELL", "curl --silent --fail --user elastic:qwerty localhost:9200/_cluster/health?local=true || exit 1" ]
       interval: 20s
       timeout: 20s
       retries: 10
@@ -21,10 +21,10 @@ services:
       - elastic:/usr/share/elasticsearch/data
 
   kibana:
-    image: kibana:8.12.2
+    image: "bitnami/kibana:8.17.1"
     container_name: kibana
     environment:
-      ELASTICSEARCH_HOSTS: http://elastic:9200
+      KIBANA_ELASTICSEARCH_URL: elastic
     healthcheck:
       test: [ "CMD-SHELL", "curl --silent --fail localhost:5601/api/status || exit 1" ]
       interval: 20s

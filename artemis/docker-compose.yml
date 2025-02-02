@@ -13,7 +13,7 @@ services:
       timeout: 10s
       retries: 5
     volumes:
-      - artemis-data:/var/lib/artemis-instance
+      - artemis:/var/lib/artemis-instance
 
 volumes:
-  artemis-data:
+  artemis:

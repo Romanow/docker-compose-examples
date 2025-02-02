@@ -1,6 +1,6 @@
-[![Build](https://github.com/Romanow/docker-compose-examples/actions/workflows/build.yaml/badge.svg?branch=master)](https://github.com/Romanow/docker-compose-examples/actions/workflows/build.yaml)
+[![CI](https://github.com/Romanow/docker-compose-examples/actions/workflows/build.yaml/badge.svg?branch=master)](https://github.com/Romanow/docker-compose-examples/actions/workflows/build.yaml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
-[![License](https://img.shields.io/github/license/Romanow/docker-compose-examples)](https://github.com/Romanow/docker-compose-exampleslist/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/Romanow/docker-compose-examples)](https://github.com/Romanow/docker-compose-examples/blob/master/LICENSE)
 
 # Docker Compose examples
 
@@ -13,7 +13,10 @@
 ## Storages
 
 * [Postgres](postgres/README.md)
+* [Patroni](mysql/README.md)
+* [Mongo](mysql/README.md)
 * [MySQL](mysql/README.md)
+* [Redis](mysql/README.md)
 * [Elastic](elastic/README.md)
 * [Minio](minio/README.md)
 
